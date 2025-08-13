@@ -1,23 +1,28 @@
  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
  body {
      font-family: Jost, sans-serif;
-     background: url('http://cdn.mcauto-images-production.sendgrid.net/ad8e10015e387ae8/abe5a2bc-ebc6-4541-9ac1-1b544ed6e7de/2561x1112.png') no-repeat center center / cover;
-     min-height: 100vh;
+     background: linear-gradient(180deg, #050B20 0%, #152E86 100%);
+     height: 100vh;
+     min-height: 661px;
      display: flex;
-     align-items: center;
+     justify-content: center;
+     align-items: flex-start;
      padding: 0;
      margin: 0;
+     min-width: 320px;
  }
  
- @supports (height: 100dvh) {
-     body {
-         min-height: 100dvh;
-     }
+ html[lang^="fr"] body {
+     min-height: 738px;
+ }
+ 
+ .text {
+     text-align: center;
  }
  
  h1 {
      color: #FFF;
-     font-size: 32px;
+     font-size: clamp(24px, 2.5vw, 32px);
      font-style: normal;
      font-weight: 700;
      line-height: 36px;
@@ -25,53 +30,49 @@
      text-transform: uppercase;
  }
  
- .container {
-     display: flex;
-     align-items: center;
-     align-self: stretch;
-     text-align: center;
-     margin: 0;
-     width: 100%;
-     padding: 8px;
-     box-sizing: border-box;
- }
- 
  .content {
-     border-radius: 8px;
-     background: rgba(5, 11, 32, 0.60);
      display: flex;
-     width: 450px;
-     height: 540px;
-     padding: 32px;
+     width: clamp(306px, 38%, 476px);
+     padding: 24px 0;
      flex-direction: column;
-     justify-content: space-between;
-     align-items: flex-start;
+     align-items: center;
+     gap: 16px;
      color: #B4B9DC;
-     /* 16pt/light */
-     font-family: Jost;
-     font-size: 16px;
+     font-size: 14px;
      font-style: normal;
-     font-weight: 300;
-     line-height: 18.8px;
-     /* 117.5% */
-     text-align: left;
+     font-weight: 400;
+     line-height: 16.4px;
  }
  
  .logo {
-     width: 143.247px;
-     height: 37.5px;
+     width: 279px;
+     height: 180px;
      flex-shrink: 0;
  }
  
+ .accent {
+     color: #FFF;
+     font-size: 16px;
+     font-weight: 500;
+     line-height: 18.8px;
+ }
+ 
  .support {
-     padding: 17px 16px;
+     display: flex;
+     flex-wrap: wrap;
+     padding: 11px 12px;
+     justify-content: center;
+     align-items: center;
+     gap: 8px;
      border-radius: 8px;
-     background: #192355;
-     margin: 24px 0;
+     background: #EBB446;
+     margin: 16px 0;
+     color: #1E0F00;
+     font-weight: 500;
  }
  
  .support-link {
-     color: var(--link-default, #EBB446);
+     color: #1E0F00;
      text-align: center;
      text-decoration-line: underline;
      text-decoration-style: dotted;
@@ -83,39 +84,8 @@
      text-underline-position: from-font;
  }
  
- @media (min-width: 780px) and (max-width: 1024px) and (orientation: landscape) {
-     @supports (height: 100dvh) {
-         body {
-             min-height: 100dvh;
-         }
-     }
-     @supports not (height: 100dvh) {
-         body {
-             min-height: 100vh;
-         }
-     }
- }
- 
  @media (max-width: 779px) {
-     body {
-         background: url("http://cdn.mcauto-images-production.sendgrid.net/ad8e10015e387ae8/98ad9232-6ba2-4a65-b282-0e1719340f50/641x420.png"), #192355;
-         background-repeat: no-repeat, repeat;
-         border-radius: 8px;
-         flex-direction: column;
-         align-items: center;
-         justify-content: flex-start;
-         background-size: 320px;
-         background-position: top center;
-         min-width: 320px;
-     }
-     .container {
-         justify-content: center;
-         margin-top: 172px;
-         padding: 0;
-     }
      .content {
-         width: 272px;
-         padding: 24px;
-         height: auto;
+         padding: 24px 7px;
      }
  }
