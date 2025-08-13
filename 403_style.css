@@ -1,15 +1,18 @@
  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
  body {
-     font-family: sans-serif;
-     font-family: Jost;
-     background: url('http://cdn.mcauto-images-production.sendgrid.net/ad8e10015e387ae8/abe5a2bc-ebc6-4541-9ac1-1b544ed6e7de/2561x1112.png') no-repeat;
-     background-size: cover;
-     background-position: center center;
-     height: 100vh;
+     font-family: Jost, sans-serif;
+     background: url('http://cdn.mcauto-images-production.sendgrid.net/ad8e10015e387ae8/abe5a2bc-ebc6-4541-9ac1-1b544ed6e7de/2561x1112.png') no-repeat center center / cover;
+     min-height: 100vh;
      display: flex;
      align-items: center;
      padding: 0;
      margin: 0;
+ }
+ 
+ @supports (height: 100dvh) {
+     body {
+         min-height: 100dvh;
+     }
  }
  
  h1 {
@@ -80,9 +83,16 @@
      text-underline-position: from-font;
  }
  
- @media (orientation: landscape) {
-     body {
-         height: calc(var(--vh) * 100);
+ @media (min-width: 780px) and (max-width: 1024px) and (orientation: landscape) {
+     @supports (height: 100dvh) {
+         body {
+             min-height: 100dvh;
+         }
+     }
+     @supports not (height: 100dvh) {
+         body {
+             min-height: 100vh;
+         }
      }
  }
  
