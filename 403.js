@@ -3,7 +3,7 @@
         en: {
             t: "Access Denied",
             msg: "Looks like Gravira isn’t available in your region right now.<br><br>Due to our intergalactic gaming license 🌍 (yes, we take rules seriously), we’re unable to offer access from your current location.<br><br>If you believe this is a mistake, or just want to say hi, feel free to drop us a line.",
-            help: "Need help? Contact our",
+            help: "Need help? Contact our ",
             vpn: "🛸 Using a VPN?",
             link: "live chat",
             note: "We’re cool with that 😎 — just note that depending on your setup, things might not always run smoothly.<br><br>✨ Thanks for flying with Gravira. Until next time — safe travels!"
@@ -30,4 +30,5 @@
     g("vpn") && (g("vpn").textContent = d.vpn);
     g("link") && (g("link").textContent = d.link);
     g("note") && (g("note").innerHTML = d.note);
+
 })();
